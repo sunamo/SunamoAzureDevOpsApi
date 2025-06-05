@@ -1,19 +1,21 @@
 namespace SunamoAzureDevOpsApi;
 
 using SunamoAzureDevOpsApi._apis.git;
-using SunamoPS;
+using System.Text;
 
 public class AzureDevOpsApiParser
 {
-    public static string ParseRepositories(string s, PowershellBuilder d, string urlClone)
+    public static string ParseRepositories(string s, string urlClone)
     {
         var myDeserializedClass = JsonConvert.DeserializeObject<Repositories>(s);
 
+        StringBuilder sb = new();
+
         foreach (var item in myDeserializedClass.value)
         {
-            d.Git.Clone(string.Format(urlClone, item.name), "");
+            sb.AppendLine("git clone " + string.Format(urlClone, item.name));
         }
 
-        return d.ToString();
+        return sb.ToString();
     }
 }
