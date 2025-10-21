@@ -1,3 +1,5 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoAzureDevOpsApi;
 
 using Microsoft.TeamFoundation.SourceControl.WebApi;
@@ -13,15 +15,18 @@ public class AzureDevOpsApiClient(string organization, string personalAccessToke
 {
     public async Task<List<string>> LoadRepositories()
     {
-        // Připojení k Azure DevOps
+        // EN: Connect to Azure DevOps
+        // CZ: Připojení k Azure DevOps
         var connection = new VssConnection(new Uri($"https://dev.azure.com/{organization}"), new VssBasicCredential(string.Empty, $"{personalAccessToken}"));
 
-        // Získání klienta Git
+        // EN: Get Git client
+        // CZ: Získání klienta Git
         var gitClient = connection.GetClient<GitHttpClient>();
 
-        // Získání seznamu repozitářů
+        // EN: Get list of repositories
+        // CZ: Získání seznamu repozitářů
         var repositories = await gitClient.GetRepositoriesAsync();
 
-        return repositories.Select(d => d.Name).ToList();
+        return repositories.Select(repository => repository.Name).ToList();
     }
 }
