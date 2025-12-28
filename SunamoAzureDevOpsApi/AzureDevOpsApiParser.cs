@@ -1,3 +1,4 @@
+// variables names: ok
 namespace SunamoAzureDevOpsApi;
 
 using SunamoAzureDevOpsApi._apis.git;

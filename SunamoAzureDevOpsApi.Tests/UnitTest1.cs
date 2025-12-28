@@ -1,4 +1,5 @@
-﻿namespace SunamoAzureDevOpsApi.Tests;
+// variables names: ok
+namespace SunamoAzureDevOpsApi.Tests;
 
 public class UnitTest1
 {
