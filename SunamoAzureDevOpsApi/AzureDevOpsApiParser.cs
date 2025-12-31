@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoAzureDevOpsApi;
 
 using SunamoAzureDevOpsApi._apis.git;
@@ -12,9 +11,9 @@ public class AzureDevOpsApiParser
 
         StringBuilder gitCloneCommands = new();
 
-        foreach (var item in repositories.value)
+        foreach (var item in repositories.Value)
         {
-            gitCloneCommands.AppendLine("git clone " + string.Format(urlClone, item.name));
+            gitCloneCommands.AppendLine("git clone " + string.Format(urlClone, item.Name));
         }
 
         return gitCloneCommands.ToString();
