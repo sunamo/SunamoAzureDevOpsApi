@@ -15,3 +15,14 @@ Přečti si ten soubor před jakoukoliv prací na přejmenování proměnných v
 - ❌ NIKDY nepoužívaj `item` pro parametry metod → vyhrazeno pro foreach
 - ✅ VŽDY maž nepoužívané parametry z hlaviček metod
 - ✅ VŽDY dbej na konzistenci v rámci jednoho souboru
+
+Balíčky
+<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" Pack="True" />
+
+potřebuji kvůli importům:
+
+using Microsoft.TeamFoundation.SourceControl.WebApi;
+using Microsoft.VisualStudio.Services.Common;
+using Microsoft.VisualStudio.Services.WebApi;
+
