@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoAzureDevOpsApi;
 
 using Microsoft.TeamFoundation.SourceControl.WebApi;
