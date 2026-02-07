@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoAzureDevOpsApi.Tests\SunamoAzureDevOpsApi.Tests.csproj" />
+  <Project Path="RunnerAzureDevOpsApi\RunnerAzureDevOpsApi.csproj" />
+  <Project Path="SunamoAzureDevOpsApi\SunamoAzureDevOpsApi.csproj" />
+</Solution>
