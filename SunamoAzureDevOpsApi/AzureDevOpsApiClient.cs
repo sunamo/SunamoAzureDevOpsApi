@@ -3,10 +3,6 @@ namespace SunamoAzureDevOpsApi;
 using Microsoft.TeamFoundation.SourceControl.WebApi;
 using Microsoft.VisualStudio.Services.Common;
 using Microsoft.VisualStudio.Services.WebApi;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Client for interacting with Azure DevOps API.
@@ -21,7 +17,7 @@ public class AzureDevOpsApiClient(string organization, string personalAccessToke
     /// <returns>List of repository names.</returns>
     public async Task<List<string>> LoadRepositories()
     {
-        var connection = new VssConnection(new Uri($"https://dev.azure.com/{organization}"), new VssBasicCredential(string.Empty, $"{personalAccessToken}"));
+        var connection = new VssConnection(new Uri($"https://dev.azure.com/{organization}"), new VssBasicCredential(string.Empty, personalAccessToken));
 
         var gitClient = connection.GetClient<GitHttpClient>();
 

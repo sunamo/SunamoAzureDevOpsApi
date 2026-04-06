@@ -1,10 +1,31 @@
-# $PROJECT$
+# SunamoAzureDevOpsApi
+
+Utilities for working with Azure DevOps API.
+
+## Overview
+
+SunamoAzureDevOpsApi provides a client for connecting to Azure DevOps and a parser for generating git clone commands from API responses.
+
+## Main Components
+
+### AzureDevOpsApiClient
+
+Client for interacting with Azure DevOps API. Connects using a Personal Access Token and retrieves repository information.
+
+- `LoadRepositories()` - Loads list of repository names from an Azure DevOps organization.
+
+### AzureDevOpsApiParser
+
+Parser for Azure DevOps API JSON responses.
+
+- `ParseRepositories(string jsonResponse, string cloneUrlTemplate)` - Parses a JSON response containing repositories and generates git clone commands using the provided URL template.
 
 ## Target Frameworks
 
-**TargetFrameworks:** `net10.0;net9.0;net8.0`
+- net10.0
+- net9.0
+- net8.0
 
-**Reason:** Code uses C# 12.0 features (collection expressions, primary constructors) or dependencies requiring .NET 8.0+:
-- Collection expressions `[]` syntax requires C# 12.0 (net8.0+)
-- Primary constructors require C# 12.0 (net8.0+) 
-- Entity Framework Core 9.x requires net8.0+
+## License
+
+MIT
