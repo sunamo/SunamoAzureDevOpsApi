@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Utilities for working with Azure DevOps</Description>
-    <Version>26.4.6.5</Version>
+    <Version>26.4.6.6</Version>
     <PackageReleaseNotes>feat: Improved code quality</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
