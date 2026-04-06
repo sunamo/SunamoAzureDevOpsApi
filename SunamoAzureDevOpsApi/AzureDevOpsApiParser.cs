@@ -4,19 +4,17 @@ using SunamoAzureDevOpsApi._apis.git;
 using System.Text;
 
 /// <summary>
-/// EN: Parser for Azure DevOps API responses
-/// CZ: Parser pro odpovědi z Azure DevOps API
+/// Parser for Azure DevOps API responses.
 /// </summary>
 public class AzureDevOpsApiParser
 {
     /// <summary>
-    /// EN: Parses JSON response containing repositories and generates git clone commands
-    /// CZ: Parsuje JSON odpověď obsahující repozitáře a generuje git clone příkazy
+    /// Parses JSON response containing repositories and generates git clone commands.
     /// </summary>
-    /// <param name="jsonResponse">EN: JSON response from Azure DevOps API / CZ: JSON odpověď z Azure DevOps API</param>
-    /// <param name="urlClone">EN: URL template for git clone command (use {0} for repository name) / CZ: URL šablona pro git clone příkaz (použijte {0} pro název repozitáře)</param>
-    /// <returns>EN: String containing git clone commands for all repositories / CZ: Řetězec obsahující git clone příkazy pro všechny repozitáře</returns>
-    public static string ParseRepositories(string jsonResponse, string urlClone)
+    /// <param name="jsonResponse">JSON response from Azure DevOps API.</param>
+    /// <param name="cloneUrlTemplate">URL template for git clone command (use {0} for repository name).</param>
+    /// <returns>String containing git clone commands for all repositories.</returns>
+    public static string ParseRepositories(string jsonResponse, string cloneUrlTemplate)
     {
         var repositories = JsonConvert.DeserializeObject<Repositories>(jsonResponse);
 
@@ -29,7 +27,7 @@ public class AzureDevOpsApiParser
 
         foreach (var repository in repositories.Value)
         {
-            gitCloneCommands.AppendLine("git clone " + string.Format(urlClone, repository.Name));
+            gitCloneCommands.AppendLine("git clone " + string.Format(cloneUrlTemplate, repository.Name));
         }
 
         return gitCloneCommands.ToString();

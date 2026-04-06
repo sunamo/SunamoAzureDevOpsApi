@@ -1,26 +1,30 @@
 # SunamoAzureDevOpsApi
 
-Utilities for working with Azure DevOps
+Utilities for working with Azure DevOps API.
 
 ## Overview
 
-SunamoAzureDevOpsApi is part of the Sunamo package ecosystem, providing modular, platform-independent utilities for .NET development.
+SunamoAzureDevOpsApi is part of the Sunamo package ecosystem, providing modular, platform-independent utilities for .NET development. It offers a client for connecting to Azure DevOps and a parser for generating git clone commands from API responses.
 
 ## Main Components
 
-### Key Classes
+### AzureDevOpsApiClient
 
-- **AzureDevOpsApiClient**
-- **AzureDevOpsApiParser**
-- **Project**
-- **Repositories**
-- **Value**
+Client for interacting with Azure DevOps API. Connects using a Personal Access Token and retrieves repository information.
 
-### Key Methods
+- `LoadRepositories()` - Loads list of repository names from an Azure DevOps organization.
 
-- `AzureDevOpsApiClient()`
-- `LoadRepositories()`
-- `ParseRepositories()`
+### AzureDevOpsApiParser
+
+Parser for Azure DevOps API JSON responses.
+
+- `ParseRepositories(string jsonResponse, string cloneUrlTemplate)` - Parses a JSON response containing repositories and generates git clone commands using the provided URL template.
+
+### Model Classes
+
+- **Project** - Represents an Azure DevOps project with properties like Id, Name, Description, State, and Visibility.
+- **Repositories** - Container for the repository list API response.
+- **Value** - Represents an individual Azure DevOps repository with clone URLs, branch info, and project association.
 
 ## Installation
 
@@ -28,25 +32,19 @@ SunamoAzureDevOpsApi is part of the Sunamo package ecosystem, providing modular,
 dotnet add package SunamoAzureDevOpsApi
 ```
 
+## Target Frameworks
+
+- net10.0
+- net9.0
+- net8.0
+
 ## Dependencies
 
-- **Microsoft.TeamFoundationServer.Client** (v19.225.1)
-- **Microsoft.VisualStudio.Services.Client** (v19.225.1)
-- **Newtonsoft.Json** (v13.0.3)
-- **Microsoft.Extensions.Logging.Abstractions** (v9.0.5)
-
-## Package Information
-
-- **Package Name**: SunamoAzureDevOpsApi
-- **Version**: 25.6.5.2
-- **Target Framework**: net9.0
-- **Category**: Platform-Independent NuGet Package
-- **Source Files**: 3
-
-## Related Packages
-
-This package is part of the Sunamo package ecosystem. For more information about related packages, visit the main repository.
+- **Microsoft.TeamFoundationServer.Client** (v19.225.2)
+- **Microsoft.VisualStudio.Services.Client** (v19.225.2)
+- **Newtonsoft.Json** (v13.0.4)
+- **Microsoft.Extensions.Logging.Abstractions** (v10.0.2)
 
 ## License
 
-See the repository root for license information.
+MIT - See the repository root for license information.
