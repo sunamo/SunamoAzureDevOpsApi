@@ -1,5 +1,9 @@
 # SunamoAzureDevOpsApi
 
+## Short description
+
+Knihovna s klientem pro Azure DevOps API (AzureDevOpsApiClient) přihlašovaným přes PAT, který načítá seznam repozitářů organizace. Obsahuje i parser, který z odpovědí API generuje příkazy git clone. Součást balíčků Sunamo, doplněná o Runner a testy.
+
 Utilities for working with Azure DevOps API.
 
 ## Overview
