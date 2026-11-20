@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoAzureDevOpsApi._apis.git;
 
 public class Project
