@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoAzureDevOpsApi.Tests;
 
 public class UnitTest1
